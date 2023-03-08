@@ -9,4 +9,10 @@ const notificationSlice = createSlice({
     }
 })
 export const { showAnecdote } = notificationSlice.actions
+export const setNotification = (content, time) => {
+    return dispatch => {
+        dispatch(showAnecdote(content))
+        setTimeout(()=>dispatch(showAnecdote('')),time*1000)
+    }
+}
 export default notificationSlice.reducer
