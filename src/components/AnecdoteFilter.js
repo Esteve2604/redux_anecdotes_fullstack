@@ -1,4 +1,4 @@
-import changeFilter from "../reducers/filterReducer"
+import {changeFilter} from "../reducers/filterReducer"
 import { useDispatch } from 'react-redux'
 
 const AnecdoteFilter = () => {
@@ -6,7 +6,6 @@ const AnecdoteFilter = () => {
     const handleChange = (event) => {
         event.preventDefault()
         const filterName=event.target.value
-        event.target.value=''
         dispatch(changeFilter(filterName))
     }
     const style = {
